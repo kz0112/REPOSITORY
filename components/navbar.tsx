@@ -9,7 +9,6 @@ import { useState } from 'react'
 const navLinks = [
   { href: '/', label: 'Басты бет' },
   { href: '/calculator', label: 'Қаржы Калькуляторы' },
-  { href: '/advisor', label: 'ЖИ Кеңесші' },
 ]
 
 export function Navbar() {

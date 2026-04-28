@@ -4,7 +4,8 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { HorizontalDivider, BackgroundPattern, CardCornerOrnament } from '@/components/kazakh-ornaments'
 import { AnimatedCounter } from '@/components/animated-counter'
-import { Bot, Shield, BarChart3, ArrowRight } from 'lucide-react'
+import { AIFinanceBlock } from '@/components/ai-finance-block'
+import { Shield, BarChart3, ArrowRight, Cpu } from 'lucide-react'
 import Link from 'next/link'
 
 const stats = [
@@ -15,19 +16,19 @@ const stats = [
 
 const infoCards = [
   {
-    icon: Bot,
-    title: 'Алгоритмдік сауда',
-    description: 'ЖИ нарықты талдап, автоматты шешімдер қабылдайды',
+    icon: Cpu,
+    title: 'Автоматтандыру',
+    description: 'ЖИ қаржылық процестерді толығымен автоматтандырады',
   },
   {
     icon: Shield,
-    title: 'Алаяқтықты анықтау',
-    description: 'Жасанды интеллект күдікті транзакцияларды бірден табады',
+    title: 'Қауіпсіздік',
+    description: 'Жасанды интеллект алаяқтықты бірден анықтайды',
   },
   {
     icon: BarChart3,
-    title: 'Тәуекелді бағалау',
-    description: 'ЖИ несие тәуекелін дәлірек есептейді',
+    title: 'Талдау',
+    description: 'ЖИ мыңдаған деректерді секундтарда талдайды',
   },
 ]
 
@@ -60,21 +61,14 @@ export default function Home() {
                 Болашақ экономиканың жаңа моделі
               </p>
               
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 fade-in-up delay-200">
+              {/* CTA Button */}
+              <div className="flex items-center justify-center mb-16 fade-in-up delay-200">
                 <Link
                   href="/calculator"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all hover:scale-105"
                 >
                   Калькуляторды ашу
                   <ArrowRight size={20} />
-                </Link>
-                <Link
-                  href="/advisor"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-all hover:scale-105"
-                >
-                  ЖИ-мен сөйлесу
-                  <Bot size={20} />
                 </Link>
               </div>
 
@@ -141,7 +135,7 @@ export default function Home() {
               <span className="text-foreground">Даму Жолы</span>
             </h2>
             <p className="text-muted-foreground text-center mb-16">
-              Технологиялық революцияның негізгі кезеңдері
+              Технологиялық революцияның негізг�� кезеңдері
             </p>
             
             <div className="relative">
@@ -175,6 +169,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* AI Finance Interactive Block */}
+        <AIFinanceBlock />
+
+        <HorizontalDivider />
+
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -188,24 +187,15 @@ export default function Home() {
                 Қаржылық болашағыңызды <span className="gold-text">ЖИ-мен</span> жоспарлаңыз
               </h2>
               <p className="text-muted-foreground mb-8">
-                Біздің калькуляторлар мен ЖИ кеңесшіні қолданып, ақша басқаруды жеңілдетіңіз
+                Калькуляторды қолданып, ақша басқаруды жеңілдетіңіз
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/calculator"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all"
-                >
-                  Калькулятор
-                  <ArrowRight size={18} />
-                </Link>
-                <Link
-                  href="/advisor"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-all"
-                >
-                  ЖИ Кеңесші
-                  <Bot size={18} />
-                </Link>
-              </div>
+              <Link
+                href="/calculator"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                Калькуляторды ашу
+                <ArrowRight size={18} />
+              </Link>
             </div>
           </div>
         </section>
