@@ -1,12 +1,17 @@
 import { streamText, convertToModelMessages, UIMessage } from 'ai'
+import { createGoogleGenerativeAI } from '@ai-sdk/google'
 
 export const maxDuration = 30
+
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+})
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json()
 
   const result = streamText({
-    model: 'openai/gpt-4o-mini',
+    model: google('gemini-1.5-flash'),
     system: `Сен AIFinance Hub-тың қаржы кеңесшісісің. Атың — Алибек. 
 
 Негізгі ережелер:
